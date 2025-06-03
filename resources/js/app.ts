@@ -38,3 +38,6 @@ createInertiaApp({
 
 // This will set light / dark mode on page load...
 initializeTheme();
+
+window.__VITE = import.meta.env.VITE_VAPOR_ASSET_URL;
+console.log('VITE_VAPOR_ASSET_URL:' + import.meta.env.VITE_VAPOR_ASSET_URL);
