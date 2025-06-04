@@ -15,6 +15,7 @@ Route::get('/test1', function () {
     return [
         'ip' => request()->ip(),
         'ips' => request()->ips(),
+        'headers' => request()->headers->all(),
     ];
 });
 
