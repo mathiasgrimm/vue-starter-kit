@@ -18,7 +18,7 @@ Route::get('/test1', function () {
         'ips' => request()->ips(),
         'headers' => request()->headers->all(),
     ], JSON_PRETTY_PRINT | JSON_UNESCAPED_LINE_TERMINATORS | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-})->middleware(SkipNightwatch::class);
+});
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';

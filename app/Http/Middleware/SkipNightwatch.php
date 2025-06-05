@@ -15,7 +15,9 @@ class SkipNightwatch
      */
     public function handle(Request $request, Closure $next): Response
     {
-         config(['nightwatch.enabled' => false]);
+        if ($request->uri()->path() == 'test1') {
+            config(['nightwatch.enabled' => false]);
+        }
 
         return $next($request);
     }
