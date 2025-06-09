@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\SetCacheHeaders;
 use App\Http\Middleware\SkipNightwatch;
 use App\Http\Middleware\HandleAppearance;
 use App\Http\Middleware\HandleInertiaRequests;
@@ -18,6 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->encryptCookies(except: ['appearance', 'sidebar_state']);
 
         $middleware->web(append: [
+            SetCacheHeaders::class,
             SkipNightwatch::class,
             HandleAppearance::class,
             HandleInertiaRequests::class,
