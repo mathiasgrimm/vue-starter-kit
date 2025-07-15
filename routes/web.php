@@ -23,5 +23,9 @@ Route::get('/test2', function () {
     return 'yo 2!';
 });
 
+Route::get('/test3', function () {
+    return ini_get('max_input_vars');
+});
+
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
